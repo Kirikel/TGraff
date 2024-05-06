@@ -9,6 +9,7 @@ const server = http.createServer(app);
 const io = socketIo(server, { cors: "*" });
 app.use(cors());
 
+
 io.on('connection', socket => {
   const id = socket.handshake.query.id
   socket.join(id)
